@@ -1,0 +1,58 @@
+{
+  "name": "@qneyraud/q-utils",
+  "version": "1.0.0",
+  "license": "ISC",
+  "description": "A collection of JS utils (DOM manipulation, maths)",
+  "keywords": [],
+  "author": {
+    "email": "quentin.neyraud@gmail.com",
+    "name": "Quentin Neyraud"
+  },
+  "maintainers": [
+    {
+      "email": "quentin.neyraud@gmail.com",
+      "name": "Quentin Neyraud"
+    }
+  ],
+  "contributors": [
+    {
+      "email": "quentin.neyraud@gmail.com",
+      "name": "Quentin Neyraud"
+    }
+  ],
+  "homepage": "https://quentinneyraud.github.io/q-dom/",
+  "repository": {
+    "type": "",
+    "url": "https://github.com/quentinneyraud/q-dom/"
+  },
+  "bugs": {
+    "email": "quentin.neyraud@gmail.com",
+    "url": "https://github.com/quentinneyraud/q-dom/issues"
+  },
+  "main": "umd/q-dom.js",
+  "module": "esm/q-dom.js",
+  "files": [
+    "esm/*",
+    "umd/*",
+    "cjs/*"
+  ],
+  "scripts": {
+    "build": "rollup --config",
+    "lint": "eslint src/*",
+    "dev": "parcel example/index.html",
+    "docs": "docsify serve ./docs",
+    "prepublish": "npm run lint && npm run build"
+  },
+  "devDependencies": {
+    "docsify-cli": "^4.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "parcel-bundler": "^1.12.3",
+    "rollup": "^1.15.6",
+    "rollup-plugin-terser": "^5.0.0"
+  }
+}
