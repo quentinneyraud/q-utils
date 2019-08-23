@@ -242,3 +242,14 @@ export const map = (value, start1, stop1, start2, stop2, clamped = false) => {
   let mapped = ((value - start1) / (stop1 - start1)) * (stop2 - start2) + start2
   return (clamped) ? clamp(mapped, start2, stop2) : mapped
 }
+
+/**
+ * Lerp
+ *
+ * @param {Number} value - Value to lerp
+ * @param {Number} target - Value targeted
+ * @param {Number} coeff - Coefficient between value and target
+ */
+export const lerp = (value, target, coeff) => {
+  return value * (1 - coeff) + target * coeff
+}
