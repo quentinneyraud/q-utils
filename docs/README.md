@@ -1,29 +1,32 @@
-# Introduction
+# q-utils
 
 ## Install
 
 ```bash
-yarn add @qneyraud/q-dom
+yarn add @qneyraud/q-utils
 ```
 
 ## Usage
 
 ```js
-import { ... } from '@qneyraud/q-dom'
+import { ... } from '@qneyraud/q-utils'
 ```
 
 ## Development
 
 ```
 # clone repo
-git clone git@github.com:quentinneyraud/q-dom.git
-cd q-dom
+git clone git@github.com:quentinneyraud/q-utils.git
+cd q-utils
 
 # install dependencies
 yarn
 
 # Run example
 npm run dev
+
+# Run docs
+npm run docs
 ```
 
 ## Build
@@ -62,7 +65,7 @@ npm run build
 ```
 
 ```js
-import { qs } from '@qneyraud/q-dom'
+import { qs } from '@qneyraud/q-utils'
 
 qs(document.body, 'li')
 // <li>Hello</li>
@@ -70,7 +73,7 @@ qs(document.body, 'li')
 
 ## qsa
 
-> Select the all HTML elements which match with selector in parent
+> Select all HTML elements which match with selector in parent
 
 #### Example
 
@@ -84,7 +87,7 @@ qs(document.body, 'li')
 ```
 
 ```js
-import { qsa } from '@qneyraud/q-dom'
+import { qsa } from '@qneyraud/q-utils'
 
 qsa(document.body, 'li')
 // [<li>Hello</li>, <li>World</li>]
@@ -107,7 +110,7 @@ qsa(document.body, 'li')
 ```
 
 ```js
-import { gebc } from '@qneyraud/q-dom'
+import { gebc } from '@qneyraud/q-utils'
 
 gebc(document.body, 'item-black')
 // <li class="item-black">Hello</li>
@@ -133,8 +136,27 @@ gebc(document.body, 'item-black', true)
 ```
 
 ```js
-import { gebi } from '@qneyraud/q-dom'
+import { gebi } from '@qneyraud/q-utils'
 
 gebi('test')
 // <li id="test">Hello</li>
+```
+
+## logElement
+
+> Log element with classes and id infos
+
+#### Example
+
+```html
+<body>
+  <h1 id="test" class="link text">Hello</h1>  
+</body>
+```
+
+```js
+import { gebi, logElement } from '@qneyraud/q-utils'
+
+logElement(gebi('test'))
+// output: h1#test.link.text
 ```
