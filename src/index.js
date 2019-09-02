@@ -253,3 +253,18 @@ export const map = (value, start1, stop1, start2, stop2, clamped = false) => {
 export const lerp = (value, target, coeff) => {
   return value * (1 - coeff) + target * coeff
 }
+
+/**
+ * Debounce function
+ *
+ * @param {Function} callback
+ * @param {Number} wait
+ */
+export const debounce = (callback, wait) => {
+  let timeout
+  return (...args) => {
+    const context = this
+    window.clearTimeout(timeout)
+    timeout = setTimeout(() => callback.apply(context, args), wait)
+  }
+}
