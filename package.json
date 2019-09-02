@@ -2,7 +2,7 @@
   "name": "@qneyraud/q-utils",
   "version": "1.2.0",
   "license": "ISC",
-  "description": "A collection of JS utils (DOM manipulation, maths)",
+  "description": "A collection of JS utils (DOM manipulation, maths, debounce)",
   "keywords": [],
   "author": {
     "email": "quentin.neyraud@gmail.com",
@@ -20,17 +20,17 @@
       "name": "Quentin Neyraud"
     }
   ],
-  "homepage": "https://quentinneyraud.github.io/q-dom/",
+  "homepage": "https://quentinneyraud.github.io/q-utils/",
   "repository": {
     "type": "",
-    "url": "https://github.com/quentinneyraud/q-dom/"
+    "url": "https://github.com/quentinneyraud/q-utils/"
   },
   "bugs": {
     "email": "quentin.neyraud@gmail.com",
-    "url": "https://github.com/quentinneyraud/q-dom/issues"
+    "url": "https://github.com/quentinneyraud/q-utils/issues"
   },
-  "main": "umd/q-dom.js",
-  "module": "esm/q-dom.js",
+  "main": "umd/q-utils.js",
+  "module": "esm/q-utils.js",
   "files": [
     "esm/*",
     "umd/*",

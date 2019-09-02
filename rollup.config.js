@@ -5,9 +5,9 @@ export default [
     input: 'src/index.js',
     plugins: [terser()],
     output: {
-      file: 'umd/q-dom.js',
+      file: 'umd/q-utils.js',
       format: 'umd',
-      name: 'QDom',
+      name: 'QUtils',
       esModule: false
     }
   },
