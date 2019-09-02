@@ -1,3 +1,5 @@
+A collection of JS utils (DOM manipulation, maths, debounce)  
+
 # Introduction
 
 ## Install

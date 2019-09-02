@@ -1,5 +1,7 @@
 # q-utils
 
+A collection of JS utils (DOM manipulation, maths, debounce)  
+
 > [Documentation](https://quentinneyraud.github.io/q-utils/)
 
 
