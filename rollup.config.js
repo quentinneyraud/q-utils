@@ -1,9 +1,13 @@
 import { terser } from 'rollup-plugin-terser'
+import babel from 'rollup-plugin-babel'
+import resolve from 'rollup-plugin-node-resolve'
 
 export default [
   {
     input: 'src/index.js',
-    plugins: [terser()],
+    plugins: [resolve(), babel({
+      exclude: 'node_modules/**'
+    }), terser()],
     output: {
       file: 'umd/q-utils.js',
       format: 'umd',

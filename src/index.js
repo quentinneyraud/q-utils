@@ -262,9 +262,8 @@ export const lerp = (value, target, coeff) => {
  */
 export const debounce = (callback, wait) => {
   let timeout
-  return (...args) => {
-    const context = this
+  return () => {
     window.clearTimeout(timeout)
-    timeout = setTimeout(() => callback.apply(context, args), wait)
+    timeout = setTimeout(() => callback(), wait)
   }
 }
