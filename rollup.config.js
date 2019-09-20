@@ -6,27 +6,16 @@ import commonjs from 'rollup-plugin-commonjs'
 export default [
   {
     input: 'src/index.js',
-    plugins: [babel({
-      exclude: 'node_modules/**'
-    }), resolve(), commonjs(), terser()],
-    output: {
-      file: 'umd/q-utils.js',
+    plugins: [
+      terser(),
+      resolve(),
+      commonjs(),
+      babel()
+    ],
+    output: [{
+      file: 'umd/q-utils.min.js',
       format: 'umd',
-      name: 'QUtils',
-      esModule: false
-    }
-  },
-  {
-    input: 'src/index.js',
-    output: [
-      {
-        dir: 'esm',
-        format: 'esm'
-      },
-      {
-        dir: 'cjs',
-        format: 'cjs'
-      }
-    ]
+      name: 'q-utils'
+    }]
   }
 ]

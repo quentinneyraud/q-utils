@@ -1,12 +1,17 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": "usage",
-        "corejs": 3,
-        "modules": false
-      }
-    ]
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": [
+          "> 0.25%",
+          "edge >= 14",
+          "not ie <= 10",
+          "not op_mini all"
+        ]
+      },
+      "corejs": 3,
+      "modules": false,
+      "useBuiltIns": "usage"
+    }]
   ]
 }
