@@ -29,12 +29,9 @@
     "email": "quentin.neyraud@gmail.com",
     "url": "https://github.com/quentinneyraud/q-utils/issues"
   },
-  "main": "umd/q-utils.js",
-  "module": "esm/q-utils.js",
+  "main": "umd/q-utils.min.js",
   "files": [
-    "esm/*",
-    "umd/*",
-    "cjs/*"
+    "umd/*"
   ],
   "scripts": {
     "build": "rollup --config",
