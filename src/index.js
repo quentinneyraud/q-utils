@@ -267,3 +267,37 @@ export const debounce = (callback, wait) => {
     timeout = setTimeout(() => callback(), wait)
   }
 }
+
+/**
+ * Check that the object contains all properties passed in arguments
+ *
+ * @param {Object} obj - Object to check
+ * @param {Array} properties - List of properties that the object has to contain
+ */
+export const hasProperties = (obj, properties) => {
+  return properties.every(property => obj.hasOwnProperty(property))
+}
+
+/**
+ * Check that the value is one of the values passed in arguments
+ *
+ * @param {any} value - Value to check
+ * @param {Array} possibilities - List of values that the value should be equal
+ */
+export const isOneOf = (value, possibilities) => {
+  return possibilities.indexOf(value) > -1
+}
+
+/**
+ * Set style to an HTML element or an array of HTML elements
+ *
+ * @param {(Array|HTMLElement)} el - HTML element or an array of HTML elements where the style is applied
+ * @param {Object} styles - Styles applied
+ */
+export const setStyle = (el, styles) => {
+  if (Array.isArray(el)) {
+    el.forEach(e => Object.assign(e.style, styles))
+  } else {
+    Object.assign(el.style, styles)
+  }
+}
