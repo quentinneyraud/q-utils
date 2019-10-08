@@ -12,9 +12,9 @@ export default [
       commonjs()
     ],
     output: [{
-      file: 'umd/LIBRARY_NAME.js',
+      file: 'umd/q-utils.js',
       format: 'umd',
-      name: 'LIBRARY_NAME'
+      name: 'q-utils'
     }]
   },
   // minified
@@ -26,9 +26,9 @@ export default [
       commonjs()
     ],
     output: [{
-      file: 'umd/LIBRARY_NAME.min.js',
+      file: 'umd/q-utils.min.js',
       format: 'umd',
-      name: 'LIBRARY_NAME'
+      name: 'q-utils'
     }]
   },
   // polyfilled
@@ -40,9 +40,9 @@ export default [
       babel()
     ],
     output: [{
-      file: 'umd/LIBRARY_NAME.polyfill.js',
+      file: 'umd/q-utils.polyfill.js',
       format: 'umd',
-      name: 'LIBRARY_NAME'
+      name: 'q-utils'
     }]
   },
   // polyfilled and minified
@@ -55,9 +55,9 @@ export default [
       babel()
     ],
     output: [{
-      file: 'umd/LIBRARY_NAME.polyfill.min.js',
+      file: 'umd/q-utils.polyfill.min.js',
       format: 'umd',
-      name: 'LIBRARY_NAME'
+      name: 'q-utils'
     }]
   }
 ]
