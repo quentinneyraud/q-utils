@@ -1,3 +1,15 @@
+// const preprocessElementArgument = (args) => {
+//   if (typeof args === 'string') {
+//     return Array.from(document.querySelectorAll(args))
+//   } else if (args instanceof HTMLCollection) {
+//     return Array.from(args)
+//   } else if (args instanceof HTMLElement) {
+//     return [args]
+//   }
+
+//   return args
+// }
+
 /**
  * Select the first HTML element which match with selector in parent
  *
@@ -78,14 +90,20 @@ export const logElement = (el) => {
  * Add a listener to element(s)
  *
  * @param {(Array|HTMLElement)} el - HTML element or an array of HTML elements where the event is added
- * @param {String} eventName - Event to add
+ * @param {(String|Array)} eventName - Event to add
  * @param {domEventCallbackType} cb
  */
 export const addEvent = (el, eventName, cb) => {
-  if (Array.isArray(el)) {
-    el.forEach(e => e.addEventListener(eventName, cb))
-  } else {
-    el.addEventListener(eventName, cb)
+  if (typeof eventName === 'string') {
+    if (Array.isArray(el)) {
+      el.forEach(e => e.addEventListener(eventName, cb))
+    } else {
+      el.addEventListener(eventName, cb)
+    }
+  } else if (Array.isArray(eventName)) {
+    eventName.forEach(event => {
+      addEvent(el, event, cb)
+    })
   }
 }
 
@@ -93,14 +111,20 @@ export const addEvent = (el, eventName, cb) => {
  * Remove a listener from element(s)
  *
  * @param {(Array|HTMLElement)} el - HTML element or an array of HTML elements where the event is removed
- * @param {String} eventName - Event name to remove
+ * @param {(String|Array)} eventName - Event name to remove
  * @param {domEventCallbackType} [cb=null] - C
  */
 export const removeEvent = (el, eventName, cb = null) => {
-  if (Array.isArray(el)) {
-    el.forEach(e => e.removeEventListener(eventName, cb))
-  } else {
-    el.removeEventListener(eventName, cb)
+  if (typeof eventName === 'string') {
+    if (Array.isArray(el)) {
+      el.forEach(e => e.removeEventListener(eventName, cb))
+    } else {
+      el.removeEventListener(eventName, cb)
+    }
+  } else if (Array.isArray(eventName)) {
+    eventName.forEach(event => {
+      removeEvent(el, event, cb)
+    })
   }
 }
 
