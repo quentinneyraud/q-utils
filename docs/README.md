@@ -49,13 +49,13 @@ npm run build
 
 
 
-# Methods
+# Functions
 
 ## qs
 
 > Select the first HTML element which match with selector in parent
 
-#### Example
+### Example
 
 ```html
 <body>
@@ -77,7 +77,7 @@ qs(document.body, 'li')
 
 > Select all HTML elements which match with selector in parent
 
-#### Example
+### Example
 
 ```html
 <body>
@@ -99,7 +99,7 @@ qsa(document.body, 'li')
 
 > Select the first or all HTML elements which match with the className in parent
 
-#### Example
+### Example
 
 ```html
 <body>
@@ -125,7 +125,7 @@ gebc(document.body, 'item-black', true)
 
 > Select the first HTML element which match with the id
 
-#### Example
+### Example
 
 ```html
 <body>
@@ -148,7 +148,7 @@ gebi('test')
 
 > Log element with classes and id infos
 
-#### Example
+### Example
 
 ```html
 <body>
