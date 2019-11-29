@@ -37,17 +37,7 @@ npm run docs
 npm run build
 ```
 
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-
+<div style="margin-top: 200px"></div>
 
 # Functions
 
