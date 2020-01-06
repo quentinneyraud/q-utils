@@ -1,4 +1,4 @@
-A collection of JS utils (DOM manipulation, events, maths, debounce)  
+> A collection of JS utils (DOM manipulation, events, maths, debounce)  
 
 # Introduction
 
@@ -45,27 +45,27 @@ npm run build
 
 > Select the first HTML element which match with selector in parent
 
-### Syntax
+#### Syntax
 
 ```js
 qs(parent, selector)
 ```
 
-### Parameters
+#### Parameters
 
-#### parent
+###### parent
 
-The parent of the element ( HTMLElement | HTMLCollection | Array | String )
+The parent of the element : `( HTMLElement | HTMLCollection | Array | String )`
 
-#### selector
+###### selector
 
-A DOMString containing one selector to match against ( DOMString )
+A DOMString containing one selector to match against : `DOMString`
 
-### Return value
+#### Return value
 
-An HTMLElement that matches the selector or null 
+An `HTMLElement` that matches the selector or `null` 
 
-### Example
+#### Example
 
 ```html
 <body>
@@ -83,21 +83,7 @@ qs(document.body, 'li') // <li>Hello</li>
 qs('#list', 'li') // <li>Hello</li>
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div style="margin-top: 150px"></div>
 
 ## qsa
 
