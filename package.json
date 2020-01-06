@@ -2,7 +2,7 @@
   "name": "@qneyraud/q-utils",
   "version": "1.5.1",
   "license": "ISC",
-  "description": "A collection of JS utils (DOM manipulation, maths, debounce)",
+  "description": "A collection of JS utils (DOM manipulation, events, maths, debounce)",
   "keywords": [],
   "author": {
     "email": "quentin.neyraud@gmail.com",
