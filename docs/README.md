@@ -1,4 +1,4 @@
-A collection of JS utils (DOM manipulation, maths, debounce)  
+A collection of JS utils (DOM manipulation, events, maths, debounce)  
 
 # Introduction
 
@@ -45,11 +45,31 @@ npm run build
 
 > Select the first HTML element which match with selector in parent
 
+### Syntax
+
+```js
+qs(parent, selector)
+```
+
+### Parameters
+
+#### parent
+
+The parent of the element ( HTMLElement | HTMLCollection | Array | String )
+
+#### selector
+
+A DOMString containing one selector to match against ( DOMString )
+
+### Return value
+
+An HTMLElement that matches the selector or null 
+
 ### Example
 
 ```html
 <body>
-  <ul>
+  <ul id="list">
     <li>Hello</li>
     <li>World</li>
   </ul>
@@ -59,13 +79,34 @@ npm run build
 ```js
 import { qs } from '@qneyraud/q-utils'
 
-qs(document.body, 'li')
-// <li>Hello</li>
+qs(document.body, 'li') // <li>Hello</li>
+qs('#list', 'li') // <li>Hello</li>
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## qsa
 
 > Select all HTML elements which match with selector in parent
+
+### Arguments
+
+- parent ( HTMLElement | HTMLCollection | Array | String )
+- selector ( String )
 
 ### Example
 
