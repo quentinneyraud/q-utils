@@ -3,7 +3,7 @@ import { preprocessElementsArgument } from '../utils'
 /**
  * Remove a listener from element(s)
  *
- * @param {(HTMLElement|HTMLCollection|Array|String)} elements - HTML element or an array of HTML elements where the event is removed
+ * @param {(HTMLElement|HTMLCollection|Array<HTMLElement>|DOMString)} elements - HTML element or an array of HTML elements where the event is removed
  * @param {(String|Array)} eventName - Event name to remove
  * @param {domEventCallbackType} [cb=null] - C
  */

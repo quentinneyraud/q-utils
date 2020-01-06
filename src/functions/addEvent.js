@@ -10,8 +10,8 @@ import { preprocessElementsArgument } from '../utils'
 /**
  * Add a listener to element(s)
  *
- * @param {(HTMLElement|HTMLCollection|Array|String)} elements - HTML element or an array of HTML elements where the event is added
- * @param {(String|Array)} eventName - Event to add
+ * @param {(HTMLElement|HTMLCollection|Array<HTMLElement>|DOMString)} elements - HTML element or an array of HTML elements where the event is added
+ * @param {(String|Array<String>)} eventName - Event to add
  * @param {domEventCallbackType} cb
  */
 const addEvent = (elements, eventName, cb) => {
