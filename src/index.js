@@ -17,6 +17,25 @@ import removeEvent from './functions/removeEvent'
 import serializeForm from './functions/serializeForm'
 import setStyle from './functions/setStyle'
 
+export { default as addClass } from './functions/addClass'
+export { default as addEvent } from './functions/addEvent'
+export { default as clamp } from './functions/clamp'
+export { default as debounce } from './functions/debounce'
+export { default as gebc } from './functions/gebc'
+export { default as gebi } from './functions/gebi'
+export { default as getPos } from './functions/getPos'
+export { default as hasProperties } from './functions/hasProperties'
+export { default as isOneOf } from './functions/isOneOf'
+export { default as lerp } from './functions/lerp'
+export { default as logElement } from './functions/logElement'
+export { default as map } from './functions/map'
+export { default as qs } from './functions/qs'
+export { default as qsa } from './functions/qsa'
+export { default as removeClass } from './functions/removeClass'
+export { default as removeEvent } from './functions/removeEvent'
+export { default as serializeForm } from './functions/serializeForm'
+export { default as setStyle } from './functions/setStyle'
+
 export default {
   addClass,
   addEvent,
