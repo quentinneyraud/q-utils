@@ -5,14 +5,20 @@
  *
  * @returns {Array<HTMLElement>} elements
  */
-export const preprocessElementsArgument = (elements) => {
+export const preprocessElementsArgument = elements => {
+  let elementsArray = null
+
   if (typeof elements === 'string') {
-    return Array.from(document.querySelectorAll(elements))
+    elementsArray = Array.from(document.querySelectorAll(elements))
   } else if (elements instanceof window.HTMLCollection) {
-    return Array.from(elements)
+    elementsArray = Array.from(elements)
   } else if (elements instanceof window.HTMLElement) {
-    return [elements]
+    elementsArray = [elements]
+  } else if (Array.isArray(elements)) {
+    elementsArray = elements
   }
 
-  return elements
+  if (elementsArray.length === 0) throw new Error(`${elements} is not matching any element`)
+
+  return elementsArray
 }
