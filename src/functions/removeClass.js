@@ -13,5 +13,5 @@ export default (elements, className = null) => {
     className = [className]
   }
 
-  elements.forEach(currentElement => (className) ? currentElement.classList.remove(...className) : currentElement.className = '')
+  elements.forEach(currentElement => className ? currentElement.classList.remove(...className) : currentElement.className = '')
 }

@@ -13,5 +13,5 @@ export default (elements, className) => {
     className = [className]
   }
 
-  elements.forEach((e) => e.classList.add(...className))
+  elements.forEach(e => e.classList.add(...className))
 }

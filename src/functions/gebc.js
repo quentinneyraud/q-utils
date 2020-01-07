@@ -7,11 +7,14 @@ import { preprocessElementsArgument } from '../utils'
  * @param {String} className - class name to find
  * @param {Boolean} [all=false] - get all elements correponding in an array
  *
- * @returns {(Array|HTMLElement)} array of elements corresponding to class name or null
+ * @returns {(Array|HTMLElement|null)} array of elements corresponding to class name or null
  */
 export default (parent, className, all = false) => {
   parent = preprocessElementsArgument(parent)
-  const domCollection = Array.from(parent[0].getElementsByClassName(className))
 
-  return (all) ? domCollection : domCollection[0]
+  const domCollection = parent[0].getElementsByClassName(className)
+
+  if (domCollection.length === 0) return null
+
+  return all ? Array.from(domCollection) : domCollection[0]
 }
