@@ -1,4 +1,3 @@
-import a, { qs } from '../../src/index'
+import { gebc } from '../../src/index'
 
-console.log(a)
-console.log(qs)
+console.log(gebc(document.body, 'test', false))
