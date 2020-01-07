@@ -55,11 +55,11 @@ qs(parent, selector)
 
 ###### parent
 
-The parent of the element : `( HTMLElement | HTMLCollection | Array | String )`
+The parent of the element : `( HTMLElement | HTMLCollection | Array | DOMString )`
 
 ###### selector
 
-A DOMString containing one selector to match against : `DOMString`
+A `DOMString` containing one selector to match against
 
 #### Return value
 
@@ -89,16 +89,31 @@ qs('#list', 'li') // <li>Hello</li>
 
 > Select all HTML elements which match with selector in parent
 
-### Arguments
+#### Syntax
 
-- parent ( HTMLElement | HTMLCollection | Array | String )
-- selector ( String )
+```js
+qsa(parent, selector)
+```
 
-### Example
+#### Parameters
+
+###### parent
+
+The parent of the elements : `( HTMLElement | HTMLCollection | Array | DOMString )`
+
+###### selector
+
+A `DOMString` containing one selector to match against
+
+#### Return value
+
+An `Array` of `HTMLElement` that matches the selector or `null` 
+
+#### Example
 
 ```html
 <body>
-  <ul>
+  <ul id="list">
     <li>Hello</li>
     <li>World</li>
   </ul>
@@ -108,22 +123,52 @@ qs('#list', 'li') // <li>Hello</li>
 ```js
 import { qsa } from '@qneyraud/q-utils'
 
-qsa(document.body, 'li')
-// [<li>Hello</li>, <li>World</li>]
+qsa(document.body, 'ul') // [<ul id="list">...</ul>]
+qsa('#list', 'li') // [<li>Hello</li>, <li>World</li>]
 ```
+
+<div style="margin-top: 150px"></div>
 
 ## gebc
 
 > Select the first or all HTML elements which match with the className in parent
 
-### Example
+#### Syntax
+
+```js
+gebc(parent, className [, all = false])
+```
+
+#### Parameters
+
+###### parent
+
+The parent of the elements : `( HTMLElement | HTMLCollection | Array | DOMString )`
+
+###### className
+
+A `String` containing one selector to match against
+
+###### all
+
+A `Boolean` to select all elements. Default is `false`, only the first `HTMLElement` is returned
+
+#### Return value
+
+If `all` is true, an `Array` of `HTMLElement` which match with the className.  
+Only the first if `all` is false.  
+Or `null` if nothing matches.
+
+#### Example
 
 ```html
 <body>
-  <ul>
-    <li class="item-black">Hello</li>
-    <li class="item-white">World</li>
-    <li class="item-black">!</li>
+  <ul id="list">
+    <li class="item">1st item</li>
+    <li class="item">2nd item</li>
+    <li class="item">3rd item</li>
+    <li class="item">4th item</li>
+    <li class="item">5th item</li>
   </ul>
 </body>
 ```
@@ -131,12 +176,12 @@ qsa(document.body, 'li')
 ```js
 import { gebc } from '@qneyraud/q-utils'
 
-gebc(document.body, 'item-black')
-// <li class="item-black">Hello</li>
-
-gebc(document.body, 'item-black', true)
-// [<li class="item-black">Hello</li>, <li class="item-black">!</li>]
+gebc(document.body, 'item') // <li class="item">1st item</li>
+gebc(document.body, 'item', true) // [<li class="item">1st item</li>, <li class="item">2nd item</li>, ...]
+gebc('#list', 'card', true) // null
 ```
+
+<div style="margin-top: 150px"></div>
 
 ## gebi
 
