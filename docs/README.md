@@ -185,7 +185,7 @@ gebc('#list', 'card', true) // null
 
 ## gebi
 
-> Select the first HTML element which match with the id
+> Select the HTML element which match with the id
 
 ### Example
 
