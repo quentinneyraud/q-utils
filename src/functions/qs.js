@@ -21,5 +21,9 @@ export default (parent, selector) => {
     return acc
   }, [])
 
-  return (domCollection.length === 0) ? null : domCollection
+  if (domCollection.length === 0) return null
+
+  if (parent.length > 1) return domCollection
+
+  return domCollection[0]
 }
