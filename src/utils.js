@@ -18,7 +18,7 @@ export const preprocessElementsArgument = elements => {
     elementsArray = elements
   }
 
-  if (elementsArray.length === 0) throw new Error(`${elements} is not matching any element`)
+  if (!elementsArray || elementsArray.length === 0) throw new Error(`${elements} is not matching any element`)
 
   return elementsArray
 }

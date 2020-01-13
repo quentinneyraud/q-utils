@@ -1,3 +1,6 @@
-import { gebc } from '../../src/index'
+import { gebi, logElement } from '../../src/index'
 
-console.log(gebc(document.body, 'test', false))
+const el = gebi('first-item')
+
+logElement(el)
+logElement('.test', true)

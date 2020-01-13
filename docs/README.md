@@ -129,6 +129,10 @@ qsa('#list', 'li') // [<li>Hello</li>, <li>World</li>]
 
 <div style="margin-top: 150px"></div>
 
+## gebi
+
+<div style="margin-top: 150px"></div>
+
 ## gebc
 
 > Select the first or all HTML elements which match with the className in parent
@@ -183,44 +187,99 @@ gebc('#list', 'card', true) // null
 
 <div style="margin-top: 150px"></div>
 
-## gebi
+## addClass
 
-> Select the HTML element which match with the id
+<div style="margin-top: 150px"></div>
 
-### Example
+## removeClass
+
+<div style="margin-top: 150px"></div>
+
+## addEvent
+
+<div style="margin-top: 150px"></div>
+
+## removeEvent
+
+<div style="margin-top: 150px"></div>
+
+## getPos
+
+<div style="margin-top: 150px"></div>
+
+## hasProperties
+
+<div style="margin-top: 150px"></div>
+
+## isOneOf
+
+<div style="margin-top: 150px"></div>
+
+## lerp
+
+<div style="margin-top: 150px"></div>
+
+## clamp
+
+<div style="margin-top: 150px"></div>
+
+## map
+
+<div style="margin-top: 150px"></div>
+
+## serializeForm
+
+<div style="margin-top: 150px"></div>
+
+## setStyle
+
+<div style="margin-top: 150px"></div>
+
+## debounce
+
+<div style="margin-top: 150px"></div>
+
+## logElement
+
+> Log element(s) with tag, id, classes and dataset informations
+
+#### Syntax
+
+```js
+logElement(elements [, collapsed = false])
+```
+
+#### Parameters
+
+###### elements
+
+The elements to log : `( HTMLElement | HTMLCollection | Array | DOMString )`
+
+###### collapsed
+
+A `Boolean` to collapse log in browser console. Default is `false`, log is expanded
+
+#### Example
 
 ```html
 <body>
   <ul>
-    <li id="test">Hello</li>
-    <li>World</li>
-    <li>!</li>
+    <li id="first-item" class="item card" data-id="0" data-checked="OK"></li>
+    <li class="test" data-id="1"></li>
+    <li class="test" data-id="2"></li>
   </ul>
-</body>
-```
-
-```js
-import { gebi } from '@qneyraud/q-utils'
-
-gebi('test')
-// <li id="test">Hello</li>
-```
-
-## logElement
-
-> Log element with classes and id infos
-
-### Example
-
-```html
-<body>
-  <h1 id="test" class="link text">Hello</h1>  
 </body>
 ```
 
 ```js
 import { gebi, logElement } from '@qneyraud/q-utils'
 
-logElement(gebi('test'))
-// output: h1#test.link.text
+const el = gebi('test')
+
+logElement(el)
+logElement('.test', true)
 ```
+
+![test](./images/log-element.png)
+
+<div style="margin-top: 150px"></div>
