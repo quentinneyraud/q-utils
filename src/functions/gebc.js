@@ -1,20 +1,23 @@
 import { preprocessElementsArgument } from '../utils'
 
 /**
- * Select the first or all HTML elements which match with the className in parent
+ * Select the all HTML elements which match with selector in parent
  *
- * @param {(HTMLElement|HTMLCollection|Array<HTMLElement>|DOMString)} parent - HTML parent element
- * @param {String} className - class name to find
- * @param {Boolean} [all=false] - get all elements correponding in an array
+ * @param {(HTMLElement|HTMLCollection|Array<HTMLElement>|DOMString)} parent - parent element
+ * @param {String} selector - selector
  *
- * @returns {(Array|HTMLElement|null)} array of elements corresponding to class name or null
+ * @returns {(Array|null)} array of elements corresponding to selector or null
  */
-export default (parent, className, all = false) => {
+export default (parent, selector) => {
   parent = preprocessElementsArgument(parent)
 
-  const domCollection = parent[0].getElementsByClassName(className)
+  if (!parent) return null
 
-  if (domCollection.length === 0) return null
+  const domCollection = parent.reduce((acc, curr) => {
+    acc.push(...curr.getElementsByClassName(selector))
 
-  return all ? Array.from(domCollection) : domCollection[0]
+    return acc
+  }, [])
+
+  return (domCollection.length === 0) ? null : domCollection
 }

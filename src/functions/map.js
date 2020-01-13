@@ -11,6 +11,6 @@ import clamp from './clamp'
  * @param {Boolean} clamped - Indicates if the value should be clamped
  */
 export default (value, start1, stop1, start2, stop2, clamped = false) => {
-  let mapped = ((value - start1) / (stop1 - start1)) * (stop2 - start2) + start2
+  const mapped = ((value - start1) / (stop1 - start1)) * (stop2 - start2) + start2
   return (clamped) ? clamp(mapped, start2, stop2) : mapped
 }

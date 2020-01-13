@@ -5,7 +5,7 @@
  *
  * @returns {Object} Object containing all input values
  */
-export default (form) => {
+export default form => {
   return Object.values(form.elements).reduce((obj, field) => {
     if (field.type === 'submit') return obj
 

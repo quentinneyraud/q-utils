@@ -11,5 +11,15 @@ import { preprocessElementsArgument } from '../utils'
 export default (parent, selector) => {
   parent = preprocessElementsArgument(parent)
 
-  return parent[0].querySelector(selector)
+  if (!parent) return null
+
+  const domCollection = parent.reduce((acc, curr) => {
+    if (curr.querySelector(selector)) {
+      acc.push(curr.querySelector(selector))
+    }
+
+    return acc
+  }, [])
+
+  return (domCollection.length === 0) ? null : domCollection
 }

@@ -25,6 +25,8 @@ const createName = (tag, id = null, classes = []) => {
 export default (elements, collapsed) => {
   elements = preprocessElementsArgument(elements)
 
+  if (!elements) return
+
   const style = 'font-size:1.2em;font-weight:800'
 
   elements.forEach(element => {

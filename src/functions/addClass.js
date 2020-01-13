@@ -9,6 +9,8 @@ import { preprocessElementsArgument } from '../utils'
 export default (elements, className) => {
   elements = preprocessElementsArgument(elements)
 
+  if (!elements) return
+
   if (typeof className === 'string') {
     className = [className]
   }

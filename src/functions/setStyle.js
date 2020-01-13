@@ -8,5 +8,8 @@ import { preprocessElementsArgument } from '../utils'
  */
 export default (elements, styles) => {
   elements = preprocessElementsArgument(elements)
+
+  if (!elements) return null
+
   elements.forEach(e => Object.assign(e.style, styles))
 }

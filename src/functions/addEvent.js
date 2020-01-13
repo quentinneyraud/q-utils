@@ -16,6 +16,9 @@ import { preprocessElementsArgument } from '../utils'
  */
 const addEvent = (elements, eventName, cb) => {
   elements = preprocessElementsArgument(elements)
+
+  if (!elements) return
+
   if (typeof eventName === 'string') {
     elements.forEach(e => e.addEventListener(eventName, cb))
   } else if (Array.isArray(eventName)) {
