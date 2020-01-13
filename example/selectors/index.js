@@ -1,11 +1,19 @@
 import { qs, qsa, gebi, gebc } from '../../src/index'
-import { title } from '../utils'
+import { title, blank } from '../utils'
 
 title('qs')
+console.log(qs('ul', '.item'));
+console.log(qs('#list1', '.item'));
+console.log(qs('ul', '.t'));
 
-// console.log(qs(document.body, '#first-item'))
-// console.log(qs('#list', '.item'))
-// console.log(qs('.test', '.t'))
+blank(2)
+title('qsa')
 
-// console.log(qsa('.test:first-child', '.t'))
-// console.log(document.querySelectorAll('.test'));
+blank(2)
+title('gebi')
+console.log(gebi('list'))
+
+blank(2)
+title('gebc')
+
+console.log(gebc('#list', 'item'))

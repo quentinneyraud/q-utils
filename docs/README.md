@@ -69,9 +69,13 @@ An `HTMLElement` that matches the selector or `null`
 
 ```html
 <body>
-  <ul id="list">
+  <ul class="list" id="list1">
     <li>Hello</li>
     <li>World</li>
+  </ul>
+  <ul class="list">
+    <li>Foo</li>
+    <li>Bar</li>
   </ul>
 </body>
 ```
@@ -80,7 +84,7 @@ An `HTMLElement` that matches the selector or `null`
 import { qs } from '@qneyraud/q-utils'
 
 qs(document.body, 'li') // <li>Hello</li>
-qs('#list', 'li') // <li>Hello</li>
+qs('#list1', 'li') // <li>Hello</li>
 ```
 
 <div style="margin-top: 150px"></div>

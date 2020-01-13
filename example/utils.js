@@ -8,6 +8,8 @@ export const title = str => {
   console.log('#'.repeat(sepl) + ' '.repeat(padding) + str + ' '.repeat(padding) + '#'.repeat(sepl));
   console.log('#'.repeat(sepl) + ' '.repeat(padding) + ' '.repeat(padding + str.length) + '#'.repeat(sepl));
   separator(width)
+
+  blank(2)
 }
 
 export const separator = (n = 100) => console.log('#'.repeat(n))
