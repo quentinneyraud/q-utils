@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Form</title>
+	</head>
+	<body>
+    <style>
+      div[class^="type"] {
+        margin-top: 25px;
+      }
+    </style>
+
+    <a href="../index.html">Home</a>
+
+    <form id="form" action="">
+
+      <!-- Text -->
+      <div class="type-text">
+        <label for="text">Text</label>
+        <input id="text" type="text" name="text" value="Hello world">
+      </div>
+
+      <!-- Checkbox -->
+      <div class="type-checkbox">
+        <label for="checkbox">Checkbox</label>
+        <input id="checkbox" type="checkbox" name="checkbox" checked>
+      </div>
+
+      <!-- Color -->
+      <div class="type-color">
+        <label for="color">Color</label>
+        <input id="color" type="color" name="color">
+      </div>
+
+      <!-- Date -->
+      <div class="type-date">
+        <label for="date">Date</label>
+        <input id="date" type="date" name="date">
+      </div>
+
+      <!-- Email -->
+      <div class="type-email">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email">
+      </div>
+
+      <!-- File -->
+      <div class="type-file">
+        <label for="file">File</label>
+        <input id="file" type="file" name="file">
+      </div>
+
+      <!-- Number -->
+      <div class="type-number">
+        <label for="number">Number</label>
+        <input id="number" type="number" name="number" step=".01">
+      </div>
+
+      <!-- Password -->
+      <div class="type-password">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+      </div>
+
+      <!-- Radio -->
+      <div class="type-radio">
+        <div>
+          <label for="radio-1">Radio 1</label>
+          <input id="radio-1" type="radio" name="radio" value="radio_1" checked>
+        </div>
+        <div>
+          <label for="radio-2">Radio 2</label>
+          <input id="radio-2" type="radio" name="radio" value="radio_2">
+        </div>
+      </div>
+
+      <!-- Select -->
+      <div class="type-select">
+        <label for="select"></label>
+        <select name="select" id="select">
+          <option value="option_1" selected>Option 1</option>
+          <option value="option_2">Option 2</option>
+          <option value="option_3">Option 3</option>
+        </select>
+      </div>
+
+      <!-- Select multiple -->
+      <div class="type-select-multiple">
+        <label for="select-multiple"></label>
+        <select name="select-multiple" id="select-multiple" multiple>
+          <option value="option_1">Option 1</option>
+          <option value="option_2">Option 2</option>
+          <option value="option_3">Option 3</option>
+        </select>
+      </div>
+
+      <!-- Textarea -->
+      <div class="type-textarea">
+        <label for="textarea"></label>
+        <textarea name="textarea" id="textarea" cols="30" rows="10" value="message"></textarea>
+      </div>
+
+      <input type="submit" value="Send">
+
+    </form>
+
+		<script src="./index.js"></script>
+	</body>
+</html>
