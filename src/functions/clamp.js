@@ -1,5 +1,5 @@
 /**
- * Get a clamped value
+ * Get a clamped value between optional min and max parameters
  *
  * @param {Number} value - Value to clamp
  * @param {Number|null} min - Lower edge of the desired range
