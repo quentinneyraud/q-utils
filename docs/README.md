@@ -144,7 +144,7 @@ qsa('#list', 'li') // [<li>Hello</li>, <li>World</li>]
 #### Syntax
 
 ```js
-gebc(parent, className [, all = false])
+gebc(parent, className)
 ```
 
 #### Parameters
@@ -157,14 +157,9 @@ The parent of the elements : `( HTMLElement | HTMLCollection | Array | DOMString
 
 A `String` containing one selector to match against
 
-###### all
-
-A `Boolean` to select all elements. Default is `false`, only the first `HTMLElement` is returned
-
 #### Return value
 
-If `all` is true, an `Array` of `HTMLElement` which match with the className.  
-Only the first if `all` is false.  
+An `Array` of `HTMLElement` which match with the className.  
 Or `null` if nothing matches.
 
 #### Example
@@ -184,9 +179,8 @@ Or `null` if nothing matches.
 ```js
 import { gebc } from '@qneyraud/q-utils'
 
-gebc(document.body, 'item') // <li class="item">1st item</li>
-gebc(document.body, 'item', true) // [<li class="item">1st item</li>, <li class="item">2nd item</li>, ...]
-gebc('#list', 'card', true) // null
+gebc(document.body, 'item') // [<li class="item">1st item</li>, <li class="item">2nd item</li>, ...]
+gebc('#list', 'card') // null
 ```
 
 <div style="margin-top: 150px"></div>
@@ -225,9 +219,115 @@ gebc('#list', 'card', true) // null
 
 ## clamp
 
+> Get a clamped value between optional min and max parameters
+
+#### Syntax
+
+```js
+clamp(value[, min = null[, max = null]])
+```
+
+#### Parameters
+
+###### value
+
+The `Number` that will get clamped
+
+###### min
+
+The lower edge of the desired range: `Number`
+
+###### max
+
+The lower edge of the desired range: `Number`
+
+#### Return value
+
+The `value` parameter clamped between `min` and `max`
+
+#### Example
+
+```js
+import { clamp } from '@qneyraud/q-utils'
+
+const a = 50
+const b = 8750
+
+// min and max
+clamp(a, 100, 200) // 100
+clamp(b, 100, 200) // 200
+
+// only min
+clamp(a, 75) // 75
+clamp(b, 75) // 8750
+
+// only max
+clamp(a, null, 200) // 50
+clamp(b, null, 200) // 200
+```
+
 <div style="margin-top: 150px"></div>
 
 ## map
+
+> Get a mapped number from starting range to the desired range, optionaly clamped
+
+#### Syntax
+
+```js
+map(value, start1, end1, start2, end2[, clamped = false])
+```
+
+#### Parameters
+
+###### value
+
+The `Number` that will get mappped
+
+###### start1
+
+Lower edge of the starting range: `Number`
+
+###### end1
+
+Upper edge of the starting range: `Number`
+
+###### start2
+
+Lower edge of the desired range: `Number`
+
+###### end2
+
+Upper edge of the desired range: `Number`
+
+###### clamped
+
+A `Boolean` value that specifies whether the value be clamped between `start2` and `end2`. Default is `false`, the value is not clamped
+
+#### Return value
+
+The `value` parameter mapped
+
+#### Example
+
+```js
+import { clamp } from '@qneyraud/q-utils'
+
+const a = 50
+const b = 8750
+
+// min and max
+clamp(a, 100, 200) // 100
+clamp(b, 100, 200) // 200
+
+// only min
+clamp(a, 75) // 75
+clamp(b, 75) // 8750
+
+// only max
+clamp(a, null, 200) // 50
+clamp(b, null, 200) // 200
+```
 
 <div style="margin-top: 150px"></div>
 
@@ -236,6 +336,53 @@ gebc('#list', 'card', true) // null
 <div style="margin-top: 150px"></div>
 
 ## setStyle
+
+> Set style to a single or a list of HTML elements
+
+#### Syntax
+
+```js
+setStyle(elements, styles)
+```
+
+#### Parameters
+
+###### elements
+
+The element(s) : `( HTMLElement | HTMLCollection | Array | DOMString )`
+
+###### styles
+
+An `Object` of the CSS rules
+
+#### Example
+
+```html
+<body>
+  <ul id="list">
+    <li class="item">1st item</li>
+    <li class="item">2nd item</li>
+    <li class="item">3rd item</li>
+    <li class="item">4th item</li>
+    <li class="item">5th item</li>
+  </ul>
+</body>
+```
+
+```js
+import { setStyle } from '@qneyraud/q-utils'
+
+// Remove margin on body tag
+setStyle(document.body, {
+  margin: '0px'
+})
+
+// Set styles on all elements which match selector li.item 
+setStyle('li.item', {
+  color: 'red',
+  display: 'inline-block'
+})
+```
 
 <div style="margin-top: 150px"></div>
 
@@ -261,7 +408,7 @@ The elements to log : `( HTMLElement | HTMLCollection | Array | DOMString )`
 
 ###### collapsed
 
-A `Boolean` to collapse log in browser console. Default is `false`, log is expanded
+A `Boolean` value that specifies whether the log be collapsed in browser console. Default is `false`, log is expanded
 
 #### Example
 
