@@ -1,20 +1,20 @@
 import { preprocessElementsArgument } from '../utils'
 
 /**
- * Select the all HTML elements which match with selector in parent
+ * Select the all HTML elements which match with className in parent
  *
  * @param {(HTMLElement|HTMLCollection|Array<HTMLElement>|DOMString)} parent - parent element
- * @param {String} selector - selector
+ * @param {String} className - class name
  *
- * @returns {(Array|null)} array of elements corresponding to selector or null
+ * @returns {(Array|null)} array of elements corresponding to class name or null
  */
-export default (parent, selector) => {
+export default (parent, className) => {
   parent = preprocessElementsArgument(parent)
 
   if (!parent) return null
 
   const domCollection = parent.reduce((acc, curr) => {
-    acc.push(...curr.getElementsByClassName(selector))
+    acc.push(...curr.getElementsByClassName(className))
 
     return acc
   }, [])
