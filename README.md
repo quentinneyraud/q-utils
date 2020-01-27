@@ -27,7 +27,7 @@ cd q-utils
 # install dependencies
 yarn
 
-# Run example
+# Run examples
 npm run dev
 
 # Run docs

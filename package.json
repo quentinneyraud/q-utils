@@ -37,7 +37,7 @@
     "build": "rollup --config",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "dev": "parcel example/index.html",
+    "dev": "parcel examples/index.html",
     "docs": "docsify serve ./docs",
     "prepublish": "npm run lint && npm run build"
   },
