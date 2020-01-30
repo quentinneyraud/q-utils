@@ -11,7 +11,7 @@ import { preprocessElementsArgument } from '../utils'
 export default (parent, className) => {
   parent = preprocessElementsArgument(parent)
 
-  if (!parent) return null
+  if (!parent) return []
 
   const domCollection = parent.reduce((acc, curr) => {
     acc.push(...curr.getElementsByClassName(className))
@@ -19,5 +19,5 @@ export default (parent, className) => {
     return acc
   }, [])
 
-  return (domCollection.length === 0) ? null : domCollection
+  return domCollection
 }
