@@ -16,6 +16,7 @@ import removeClass from './functions/removeClass'
 import removeEvent from './functions/removeEvent'
 import serializeForm from './functions/serializeForm'
 import setStyle from './functions/setStyle'
+import deepClone from './functions/deepClone'
 
 export { default as addClass } from './functions/addClass'
 export { default as addEvent } from './functions/addEvent'
@@ -35,6 +36,7 @@ export { default as removeClass } from './functions/removeClass'
 export { default as removeEvent } from './functions/removeEvent'
 export { default as serializeForm } from './functions/serializeForm'
 export { default as setStyle } from './functions/setStyle'
+export { default as deepClone } from './functions/deepClone'
 
 export default {
   addClass,
@@ -54,5 +56,6 @@ export default {
   removeClass,
   removeEvent,
   serializeForm,
-  setStyle
+  setStyle,
+  deepClone
 }
