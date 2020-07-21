@@ -1,23 +1,3 @@
-import addClass from './functions/addClass'
-import addEvent from './functions/addEvent'
-import clamp from './functions/clamp'
-import debounce from './functions/debounce'
-import gebc from './functions/gebc'
-import gebi from './functions/gebi'
-import getPos from './functions/getPos'
-import hasProperties from './functions/hasProperties'
-import isOneOf from './functions/isOneOf'
-import lerp from './functions/lerp'
-import logElement from './functions/logElement'
-import map from './functions/map'
-import qs from './functions/qs'
-import qsa from './functions/qsa'
-import removeClass from './functions/removeClass'
-import removeEvent from './functions/removeEvent'
-import serializeForm from './functions/serializeForm'
-import setStyle from './functions/setStyle'
-import deepClone from './functions/deepClone'
-
 export { default as addClass } from './functions/addClass'
 export { default as addEvent } from './functions/addEvent'
 export { default as clamp } from './functions/clamp'
@@ -37,25 +17,5 @@ export { default as removeEvent } from './functions/removeEvent'
 export { default as serializeForm } from './functions/serializeForm'
 export { default as setStyle } from './functions/setStyle'
 export { default as deepClone } from './functions/deepClone'
-
-export default {
-  addClass,
-  addEvent,
-  clamp,
-  debounce,
-  gebc,
-  gebi,
-  getPos,
-  hasProperties,
-  isOneOf,
-  lerp,
-  logElement,
-  map,
-  qs,
-  qsa,
-  removeClass,
-  removeEvent,
-  serializeForm,
-  setStyle,
-  deepClone
-}
+export { default as randomInt } from './functions/randomInt'
+export { default as randomFloat } from './functions/randomFloat'
