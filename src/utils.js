@@ -12,7 +12,7 @@ export const preprocessElementsArgument = elements => {
     elementsArray = Array.from(document.querySelectorAll(elements))
   } else if (elements instanceof window.HTMLCollection) {
     elementsArray = Array.from(elements)
-  } else if (elements instanceof window.HTMLElement) {
+  } else if (elements instanceof window.HTMLElement || elements === window || elements === document) {
     elementsArray = [elements]
   } else if (Array.isArray(elements)) {
     elementsArray = elements
